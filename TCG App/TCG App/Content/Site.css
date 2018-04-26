@@ -22,3 +22,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.cardsetup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cardtext {
+    position: relative;
+    text-align: center;
+    color: white;
+}
