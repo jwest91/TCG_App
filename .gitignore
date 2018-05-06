@@ -1,3 +1,23 @@
 
 TCG App/.vs/TCG App/v15/Server/sqlite3/storage.ide-shm
 TCG App/.vs/TCG App/v15/Server/sqlite3/storage.ide-wal
+*.config
+*.config
+TCG App/.vs/TCG App/v15/.suo
+*.ide-shm
+*.dll
+*.cache
+*.dll
+*.pdb
+*.config
+TCG App/.vs/TCG App/v15/.suo
+*.ide
+*.ide-shm
+*.ide-wal
+*.dll
+*.pdb
+*.cache
+*.cache
+*.dll
+*.pdb
+TCG App/.vs/config/applicationhost.config
