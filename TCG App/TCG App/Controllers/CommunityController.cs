@@ -18,83 +18,51 @@ namespace TCG_App.Controllers
         {
 
         }
+        private CommunityList com = new CommunityList();
 
-        // GET: Community
-        public ActionResult Index()
+        private List<Community> communities;
+
+        public ActionResult CommunityIndex()
         {
-            return View();
+            var model = new List<Community>();
+
+            model = com.GetListOfCommunities();
+
+            return View(model);
         }
 
-        // GET: Community/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Community(string commId)
         {
-            return View();
-        }
 
-        // GET: Community/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Community/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            Community vm = new Models.Community();
+            if(commId != null)
             {
-                // TODO: Add insert logic here
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "GetCommunity";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", SqlDbType.Int);
+                cmd.Parameters["@id"].Value = Convert.ToInt32(commId);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                return RedirectToAction("Index");
+                    while (reader.Read())
+                    {
+                        vm.CommunityId = Convert.ToInt32(reader[0]);
+                        vm.CommunityName = reader[1].ToString();
+                        vm.CommunityDesc = reader[4].ToString();
+                        vm.CommunityLocation = reader[2].ToString();
+                    }
+                }
+                catch
+                { }
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Community/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Community/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Community/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Community/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View(vm);
         }
 
         public ActionResult CreateCommunity()
