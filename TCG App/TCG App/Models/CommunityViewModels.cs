@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Mvc;
 
 namespace TCG_App.Models
 {
@@ -13,6 +14,7 @@ namespace TCG_App.Models
     {
     }
     
+    //[Authorize]
     public class CreateCommunityViewModel
     {
         [Required]
