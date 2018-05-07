@@ -1,31 +1,29 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
+<div class="banner">
     <h1>TCG Community</h1>
     <p class="lead">The TCG Community App is a place where users can go to meet new players from their favorite games, find and purchase new cards, and learn about new and exciting games!</p>
     <p>Create a free account using Twitter or an email address to check out our Community page, and even create a community of your own!</p>
     <p>@Html.ActionLink("Create Community", "CreateCommunity", "Community")</p>
     <!-- <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p> -->
 </div>
-
 <div class="row">
-    <h3>Featured Games</h3>
+    <h3 class="titlefont">Featured Games</h3>
 </div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Magic the Gathering</h2>
+        <h2 class="titlefont">Magic the Gathering</h2>
         <a href="https://magic.wizards.com/en">
             <div class="cardtext">
                 <img src="~/Images/magic.jpg" alt="Norway" style="width:100%;" />
                 <div class="cardsetup">A game of Magic involves two or more players who are engaged in a battle acting as powerful wizards called planeswalkers. Each player has their own deck, either one previously constructed or made from a limited pool of cards for the event. A player starts the game with twenty "life points" and loses the game when their life total is reduced to zero. A player can also lose if they must draw from an empty deck.</div>
             </div>
         </a>
-            <p><a class="btn btn-default" href="https://magic.wizards.com/en">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://magic.wizards.com/en">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Yu-Gi-Oh!</h2>
+        <h2 class="titlefont">Yu-Gi-Oh!</h2>
         <a href="http://www.yugioh-card.com/en/">
             <div class="cardtext">
                 <img src="~/Images/yugioh.jpg" alt="Norway" style="width:100%;">
@@ -37,9 +35,9 @@
             </div>
         </a>
         <p><a class="btn btn-default" href="http://www.yugioh-card.com/en/">Learn more &raquo;</a></p>
-        </div>
+    </div>
     <div class="col-md-4">
-        <h2>Pokémon</h2>
+        <h2 class="titlefont">Pokémon</h2>
         <a href="https://www.pokemon.com/us/pokemon-tcg/">
             <div class="cardtext">
                 <img src="~/Images/pokemon.jpg" alt="Norway" style="width:100%;">
@@ -48,6 +46,6 @@
                 </div>
             </div>
         </a>
-            <p><a class="btn btn-default" href="https://www.pokemon.com/us/pokemon-tcg/">Learn more &raquo;</a></p>
-     </div>
+        <p><a class="btn btn-default" href="https://www.pokemon.com/us/pokemon-tcg/">Learn more &raquo;</a></p>
+    </div>
 </div>
