@@ -14,7 +14,7 @@ namespace TCG_App.Models
         [StringLength(100)]
 
         public string FullName { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

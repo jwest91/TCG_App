@@ -11,7 +11,7 @@ using System.Data;
 
 namespace TCG_App.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class CommunityController : Controller
     {
 
