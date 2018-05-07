@@ -79,10 +79,9 @@ namespace TCG_App.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-<<<<<<< HEAD
+
         public string Gender { get; set; }
-=======
->>>>>>> parent of e6b4a4e... Added Full Name and Gender options to registration
+
     }
 
     public class ResetPasswordViewModel
